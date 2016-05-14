@@ -1,5 +1,5 @@
 # hibernate_jsf_sample
-This is just a simple application to show how to use hibernate in a jsf web java application. This web app use all modern tools and configs I found in the internet so far. The persistence unit has almost every property mapped to javax.persistence instead of hibernate properties, so if for any reason you decide to change hibernate by any other ORM that is JPA 2.1 complient you will have a few things to change. No faces-config is used because of two reasons. 
+This is just a simple application to show how to use hibernate in a jsf web java application. This web app use all modern tools and configs I found in the internet so far. The persistence unit has almost every property mapped to javax.persistence instead of hibernate properties, so if for any reason you decide to change hibernate for any other ORM that is JPA 2.1 complient you will have a few things to change. No faces-config is used because of two reasons. 
 
 1- There is no need because I'm using jsf 2.0
 2- Richfaces is there in the maen depencies just to show you how to use it with hibernate in the same application but I'm not using anything related to Richfaces. The "index page" uses only jsf pure tags.
