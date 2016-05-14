@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head></h:head>
+<h:body>
+    <h:form>
+        <H2>
+            <h:outputText value="Olá JSF!" />
+            <br/>
+            <h:outputText id="user_" value="#{controllerBean.user}"/>
+        </H2>
+
+        <h:commandButton value="CreateDB" actionListener="#{controllerBean.createDb}"/>
+        <h:commandButton value="Insert" actionListener="#{controllerBean.insertUser}"/>
+        <h:commandButton value="GetUser" actionListener="#{controllerBean.getUser}">
+            <f:ajax execute="@form" render="user_" />
+        </h:commandButton>
+    </h:form>
+</h:body>
+</html>
