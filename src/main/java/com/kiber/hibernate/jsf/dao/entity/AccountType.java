@@ -25,7 +25,7 @@ public class AccountType implements Serializable, GenericEntity {
     @JoinColumn(name = "accuserid")
     private AccUser accUser;
 
-    @Column(name = "descrition")
+    @Column(name = "description")
     private String description;
 
     @Column(name = "closingday")
