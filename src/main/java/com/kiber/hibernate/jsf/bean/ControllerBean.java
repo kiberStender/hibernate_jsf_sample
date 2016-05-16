@@ -28,7 +28,7 @@ public class ControllerBean {
 
     public void insertUser(ActionEvent e){
 
-        final AccUser accUser = new AccUser("kleber.stender", "kleber.stender@gmail");
+        final AccUser accUser = new AccUser("", "kleber.stender@gmail");
         final AccountType at = new AccountType("", accUser, "Wallet", "15", "Wallet");
         final TransactionType tt = new TransactionType("", "AV");
         final Item item = new Item("", tt, at, accUser, "Trip To Camboriu", 539.3, new Date());

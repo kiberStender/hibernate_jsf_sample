@@ -16,10 +16,10 @@ public class TransactionType implements Serializable, GenericEntity {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @Column(name = "transactiontypeid")
+    @Column
     private String transactionTypeId;
 
-    @Column(name = "transactiontypename")
+    @Column
     private String transactionTypeName;
 
     public TransactionType(String transactionTypeId, String transactionTypeName) {

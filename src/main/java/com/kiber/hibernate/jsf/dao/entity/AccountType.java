@@ -18,20 +18,20 @@ public class AccountType implements Serializable, GenericEntity {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @Column(name = "acctypeid")
+    @Column
     private String accTypeId;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "accuserid")
     private AccUser accUser;
 
-    @Column(name = "description")
+    @Column
     private String description;
 
-    @Column(name = "closingday")
+    @Column
     private String closingDay;
 
-    @Column(name = "accmame")
+    @Column
     private String accName;
 
     @OneToMany(mappedBy = "acctype", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)

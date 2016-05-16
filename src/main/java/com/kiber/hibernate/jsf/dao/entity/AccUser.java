@@ -1,5 +1,7 @@
 package com.kiber.hibernate.jsf.dao.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,6 +16,8 @@ public class AccUser implements Serializable, GenericEntity {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     @Column(name = "accuserid")
     private String accUserId;
     @Column(name = "usermail")

@@ -17,7 +17,7 @@ public class Item implements Serializable, GenericEntity {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @Column(name = "itemid")
+    @Column
     private String itemId;
 
     @ManyToOne(cascade = CascadeType.MERGE)
@@ -32,14 +32,14 @@ public class Item implements Serializable, GenericEntity {
     @JoinColumn(name = "accuserid")
     private AccUser accUser;
 
-    @Column(name = "description")
+    @Column
     private String description;
 
-    @Column(name = "itemvalue")
+    @Column
     private Double itemValue;
 
     @Temporal(value = TemporalType.DATE)
-    @Column(name = "purchasedate")
+    @Column
     private Date purchaseDate;
 
     public Item(String itemId, TransactionType transactionType, AccountType acctype, AccUser accUser, String description, Double itemValue, Date purchaseDate) {

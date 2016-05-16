@@ -16,7 +16,7 @@ public class Balance implements Serializable, GenericEntity {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @Column(name = "balanceid")
+    @Column
     private String balanceId;
 
     @ManyToOne(cascade = CascadeType.MERGE)
