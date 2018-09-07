@@ -3,6 +3,7 @@
 # Creating base for apps
 mkdir -p ~/.apps/languages
 mkdir -p ~/.apps/builders
+mkdir -p ~/.apps/containers
 
 # Editing .bashrc
 echo "" >> ~/.bashrc
@@ -10,6 +11,7 @@ echo "#MODS" >> ~/.bashrc
 echo "APPS=\$HOME/.apps" >> ~/.bashrc
 echo "LANGUAGE=\$APPS/languages" >> ~/.bashrc
 echo "BUILDER=\$APPS/builders" >> ~/.bashrc
+echo "CONTAINER=\$APPS/containers" >> ~/.bashrc
 echo "" >> ~/.bashrc
 
 # Downloading and installing Java
@@ -30,9 +32,17 @@ mv apache-maven-3.5.4 .apps/builders/apache_maven_354 &&
 echo "export MAVEN_HOME=\$BUILDER/apache_maven_354" >> ~/.bashrc &&
 rm -rf apache-maven-3.5.4-bin.tar.gz && echo "Maven installed" &&
 
+#Downloading and installing tomcat
+tomcat_url=http://ftp.ps.pl/pub/apache/tomcat/tomcat-7/v7.0.90/bin/apache-tomcat-7.0.90.tar.gz
+wget -q $tomcat_url &&
+tar xzf apache-tomcat-7.0.90.tar.gz &&
+mv apache-tomcat-7.0.90 .apps/containers/apache_tomcat_7_0_90 &&
+echo "export CATALINA_HOME=\$CONTAINER/apache_tomcat_7_0_90" >> ~/.bashrc &&
+rm -rf apache-tomcat-7.0.90.tar.gz && echo "Tomcat installed" &&
+
 # Finishing PATH variable
 echo "" >> ~/.bashrc &&
-echo "export PATH=\$PATH:\$JAVA_HOME/bin:\$MAVEN_HOME/bin" >> ~/.bashrc &&
+echo "export PATH=\$PATH:\$JAVA_HOME/bin:\$MAVEN_HOME/bin:\$CATALINA_HOME/bin" >> ~/.bashrc &&
 
 source ~/.bashrc &&
 
@@ -49,5 +59,5 @@ sudo systemctl start postgresql.service &&
 sudo systemctl enable postgresql.service &&
 
 #sudo su - postgres -c "pg_ctl -D /var/lib/postgres/data -l logfile start" &&
-sudo su - postgres -c "createuser kleber" &&
-sudo su - postgres -c "createdb financialDb"
+sudo su - postgres -c "createuser ndecddumwochko" &&
+sudo su - postgres -c "createdb richfacessample"
